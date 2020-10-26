@@ -7,7 +7,6 @@ import Content from "../components/Content/index";
 function Home({ items }) {
   //console.log(items);
   return (
-    <div className="app">
       <div className="container">
         <Header />
         <div className="box">
@@ -15,7 +14,6 @@ function Home({ items }) {
           <Content />
         </div>
       </div>
-    </div>
   );
 }
 

@@ -2,9 +2,9 @@ import Link from "../Link";
 
 import headerNav from "../../data/header";
 
-const NavItem = ({ href = "#", linkClassName = "", children }) => {
+const NavItem = ({zIndex = 1, href = "#", linkClassName = "", children }) => {
   return (
-    <li className="nav-item">
+    <li className="nav-item" style={{zIndex: zIndex + 1}}>
       <Link href={href} className={linkClassName}>
         {children}
       </Link>
@@ -16,8 +16,8 @@ const Nav = () => {
   return (
     <nav>
       <ul className="nav">
-        {headerNav.nav.map(({ href, title }) => (
-          <NavItem key={title} href={href} linkClassName="nav-item-link">
+        {headerNav.nav.map(({ href, title }, index) => (
+          <NavItem zIndex={index} key={title} href={href} linkClassName="nav-item-link">
             {title}
           </NavItem>
         ))}

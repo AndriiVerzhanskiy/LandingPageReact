@@ -57,7 +57,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0;
   position: relative;
   overflow: hidden;
 }
@@ -65,8 +65,6 @@ body {
 .wrapper {
   margin: 0;
   padding: 0;
-  max-width: 1200px;
-  width: 100%;
   height: 50px;
 }
 
@@ -104,6 +102,8 @@ body {
   justify-content: space-between;
 
   &-item {
+    margin-left: -25px;
+    position: relative;
     list-style: none;
     text-decoration: none;
     line-height: 50px;
@@ -112,15 +112,31 @@ body {
     min-width: 200px;
     width: 100%;
     text-align: center;
+    overflow: hidden;
+    z-index: 1;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      content: "";
+      background-color: red;
+    }
 
     &-link {
+      display: block;
       color: #fff;
-      min-width: 200px;
+
+      &:hover {
+        background-color: #fff;
+
+      }
     }
 
     &:hover {
-      background-color: #fff;
+      z-index: 0;
       border-radius: 25px 0 0 0;
+      overflow: hidden;
 
       .nav-item-link {
         color: rgb(74, 179, 138);
@@ -135,7 +151,6 @@ body {
 }
 
 // .wrapper-banner {
-//   position: fixed;
 //   top: 50px;
 //   left: 0;
 //   max-width: 600px;
@@ -147,13 +162,13 @@ body {
 .banner {
   position: fixed;
   top: 50px;
-  left: 0;
+  left: auto;
   max-width: 600px;
   width: 100%;
   height: 100vh;
   background-color: rgb(74, 179, 138);
   background-repeat: no-repeat;
-  // display: block;
+  display: block;
 
   .block {
     padding-top: 100px;
