@@ -1,5 +1,3 @@
-import React from "react";
-
 const Table = ({ items }) => {
   return (
     <table className="table">

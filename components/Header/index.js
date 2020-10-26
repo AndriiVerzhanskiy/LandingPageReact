@@ -1,15 +1,14 @@
-import React from "react";
+import Nav from "../Nav/index";
 
-import NextLink from "next/link";
-
-const Header = ({ items }) => {
+const Header = () => {
     return (
-        <div div className="header">
-            <div className="mb-20">
-        <NextLink href="/about">О проекте</NextLink>
-        </div>
+        <div className="wrapper">
+            <div className="border">
+                <p>Андрей Вержанский</p>
+                <Nav />
             </div>
-  );
+        </div>
+    );
 };
 
 export default Header;
